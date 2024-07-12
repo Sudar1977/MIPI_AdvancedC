@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int main(void)
+{
     double sum=0,v;//сумма и введенное значение
     int arr_size=0, arr_u=0;//размер массива и текущая позиция
     double *arr = NULL;//память под динамический массив

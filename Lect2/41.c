@@ -1,16 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-int main(void)
-{
-    struct st { char s[10]; } t1, t2;
-    strcpy (t1.s, "Hello ");
-    t2 = t1;//память будет скопирована
-    printf ("%s", t2.s);
-    strcpy (t1.s, "world!");
-    printf ("%s", t2.s);//не поменялась
-    printf ("%s", t1.s);//поменялась
-    printf ("%s", t2.s);
-    return 0;  
-}   
+void print_matrix(int n, int m, void *a) {
+    int (*pa)[m] = a; // Указатель на строку из 
+                      // m элементов типа int
+    for( int i=0; i<n; i++ ) {
+        for( int j=0; j<m; j++ ) {
+            printf("%4d ",pa[i][j]);//двухмерный массив
+        }
+        printf("\n");
+    }
+}
+int main(void) {
+    int a[2][3] =
+    {
+        {1,2,3},
+        {4,5,6}
+    };
+    print_matrix(2,3,a);
+    return 0;
+}

@@ -1,13 +1,15 @@
 #include <stdio.h>
 
-int main(void) 
-{
-    int *p = NULL; // 0 —  не указывает ни на что 
-
-/*ОШИБКА! Попытка разыменовать нулевой указатель */ 
-    if(p && *p)//if(p && *p) правильно - ленивая логика
-        printf("True\n");
-    return 0;
+//может сравнивать любые указатели
+_Bool is_same(void *a, void *b) {
+    // *a = *b; // ОШИБКА! void * нельзя разыменовывать
+    return a == b; // Можно только сравнивать
 }
 
-
+int main(void)
+{
+    int a=5;
+    int *pa = &a;
+    is_same(&a, pa) ? printf("Same\n") : printf("Different\n");
+    return 0;
+}

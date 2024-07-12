@@ -1,12 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(void)
-{
-    const size_t SIZE = 10;
-    int *arr;
-    arr = malloc(sizeof(int) * SIZE);
-    arr[SIZE] = 100; // ОШИБКА! выход за
-                     // границу массива
-    return 0;  
-}   
+int ar[] = {1,2,3,4,5};
+int *par = ar;
+
+int main(void) {
+    par[3] = 123;
+    ar[2] = 321;
+    return 0;
+}

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <assert.h>
 #include <stdlib.h>
 //список о выделенной памяти
 typedef struct list {
@@ -64,24 +63,26 @@ void* my_malloc(size_t size, const char *file, int line, const char *func)
 }
 
 void my_free(void *ptr, const char *file, int line, const char *func)
- {
-    free(ptr);
+{
     delete(&memlist, ptr);
+    free(ptr);
 }
+
 
 //макрос, который заменяет стандартный вызов функции malloc() на вызов функции  my_malloc() и аналогичный макрос для вызова функции free()
 #define malloc(X) my_malloc( (X), __FILE__, __LINE__, __FUNCTION__)
 #define free(X) my_free( (X), __FILE__, __LINE__, __FUNCTION__)
 
+
 int main(void) {
-    int *p = malloc( sizeof(int) );
+    int *p  = malloc( sizeof(int) );//my_malloc
+    //~ int *p  = my_malloc( sizeof(int), __FILE__, __LINE__, __FUNCTION__ );//my_malloc
     int *ar = malloc(sizeof(int)*10);
     *p = 5;
     free(p);
-    //~ p = malloc(sizeof(int));
+    p = malloc(sizeof(int));
 
-    //~ free(ar);
+    free(p);
     printList(memlist);
-    assert(memlist==NULL);
     return 0;
 }

@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(void)
 {
-  int *p1, p2;
-  int n = 30;
-  p1 = &n;
-  p2 = &n; // ОШИБКА
-  return 0;
+    char *str1 = malloc(strlen("Hello world") + 1);
+    strcpy(str1, "Hello world");
+    //...
+    free(str1);  // Первый раз free
+    //...
+    free(str1); // ОШИБКА! второй раз free  
+    return 0;  
 }

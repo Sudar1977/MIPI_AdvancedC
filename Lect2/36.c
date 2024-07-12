@@ -3,19 +3,10 @@
 
 int main(void)
 {
-    {
-        int* p1;
-        p1 = malloc(sizeof(int));
-        *p1 = 99;
-        free(p1);
-        *p1 = 100; // ОШИБКА! память не определена
-    }
-    {
-        int* p1;
-        p1 = malloc(sizeof(int));
-        *p1 = 99;
-        *p1 = 100;
-        free(p1);
-    }
+    const size_t SIZE = 10;
+    int *arr;
+    arr = malloc(sizeof(int) * SIZE);
+    arr[SIZE] = 100; // ОШИБКА! выход за
+                     // границу массива
     return 0;  
-}
+}   

@@ -1,14 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int main(void)
 {
-    char *str1 = malloc(strlen("Hello world") + 1);
-    strcpy(str1, "Hello world");
-    //...
-    free(str1);  // Первый раз free
-    //...
-    free(str1); // ОШИБКА! второй раз free  
+int  num = 2147483647;// 0x7fffffff
+    int   *pi = &num;
+    short *ps = (short*)pi;
+    printf("pi: %p  Value(16): %x  Value(10): %d\n", pi, *pi, *pi);
+    printf("ps: %p  Value(16): %hx  Value(10): %hd\n", ps, *ps, *ps);
     return 0;  
-}
+}   
