@@ -2,7 +2,7 @@
 
 char *strcpy(char *dst, const char *src ) {
     char *d = dst;
-    while (*dst++ = *src++);
+    while (*dst++ = *src++);//!=0
     return d;
 }
 int main()
