@@ -1,19 +1,11 @@
-#include <stdio.h>
-#include <string.h>
-
-#define QUICKIE_STRCMP(a, b)  (*(a) != *(b) ? \
-    (int) ((unsigned char) *(a) - \
-           (unsigned char) *(b)) : \
-    strcmp((a), (b)))
-    
-    
-int main(int argc, char **argv) 
+#include <stdio.h> 
+#include <time.h> 
+double DELAY = 3; 
+int main() 
 { 
-    char s1[]="Hello world";  
-    char s2[]="Hello world";
-    if(!QUICKIE_STRCMP(s1,s2))
-        printf("Same\n");
-    else
-        printf("Not Same\n");        
-    return 0; 
+   clock_t begin = clock(); 
+   while((double)(clock() - begin)/CLOCKS_PER_SEC<DELAY) 
+   {/*printf("%4d\n",clock());*/ } 
+   printf("Hello World %d",CLOCKS_PER_SEC); 
+   return 0; 
 }

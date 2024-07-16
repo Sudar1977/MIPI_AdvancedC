@@ -1,1 +1,0 @@
-gcc main.c -E -o main.i

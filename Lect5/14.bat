@@ -1,1 +1,0 @@
-gcc -o program main.o

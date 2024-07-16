@@ -1,0 +1,6 @@
+gcc -c lib.c
+ar -r libmy1.a lib.o
+Windows
+gcc -o prog1 main.c -L ./ c:\geekbrains.ru\Projects\C\MIPI_AC_Git\MIPI_AdvancedC\Lect3\35\libmy1.a
+Linux
+gcc -o prog2 main.c -L ./ -lmy2 -rpath /home/user/mylib2/

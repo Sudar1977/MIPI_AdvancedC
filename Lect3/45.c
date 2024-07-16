@@ -1,20 +1,12 @@
 #include <stdio.h>
-#include <string.h>
-
-int main(int argc, char **argv) 
-{ 
- // Плохо. Вызов  strlen в цикле 
-    {
-        char s[]="Hello world";  
-        for(size_t i=0; i<strlen(s); i++)
-            putchar(s[i]);
-    }
-// Хорошо. Вызов  strlen 1 раз
-    {
-        char s[]="Hello world";
-        size_t len = strlen(s);
-        for(size_t i=0; i<len; i++)
-            putchar(s[i]);
-    }
-    return 0; 
+#include <time.h>
+int main(void)
+{
+    time_t mytime = time(NULL);
+    struct tm *now = localtime(&mytime);
+    printf("Date: %d.%d.%d\n", now->tm_mday,
+           now->tm_mon + 1, now->tm_year + 1900);
+    printf("Time: %d:%d:%d\n", now->tm_hour,
+           now->tm_min, now->tm_sec);
+    return 0;
 }

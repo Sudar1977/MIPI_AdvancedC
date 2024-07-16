@@ -1,1 +1,0 @@
-objdump -D main.o > main.asm

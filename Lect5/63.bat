@@ -1,1 +1,0 @@
-objdump -d 61.exe > 61.asm

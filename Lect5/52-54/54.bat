@@ -1,1 +1,0 @@
-nm -A prog.exe
