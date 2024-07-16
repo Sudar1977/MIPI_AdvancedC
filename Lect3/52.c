@@ -5,7 +5,8 @@ int main() {
     initscr();
     printw("Hello World !!!");
     printw("\nPress any key to continue... ");
-    // refresh(); // попробуйте включить и выключить
+    // refresh(); // по
+    пробуйте включить и выключить
     sleep(3);
     getch();
     endwin();

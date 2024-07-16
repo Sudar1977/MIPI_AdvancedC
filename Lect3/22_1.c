@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-
 int main() {
     char str1[] = "Small string.";
     char str2[15];
