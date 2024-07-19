@@ -1,0 +1,3 @@
+gcc -g -o prog_array main_array.c
+valgrind --tool=massif ./prog_array
+ms_print massif.out.10787
