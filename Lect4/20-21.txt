@@ -1,0 +1,4 @@
+Started at user mode: 0.522
+Ended at user mode: 0.9264
+Started at system mode: 0.0
+Ended at system mode: 0.0

@@ -1,0 +1,14 @@
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.62% of 1.61 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[3]     29.8    0.48    0.00                 func3 [3]
+-----------------------------------------------
+
+Index by function name
+
+   (2) func1                   [3] func3                   (4) new_func1
+   (5) func2                   (1) main

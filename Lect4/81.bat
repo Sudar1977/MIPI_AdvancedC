@@ -1,0 +1,1 @@
+gprof -pfunc3 -b prog.exe gmon.out > report.txt
