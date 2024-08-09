@@ -1,0 +1,11 @@
+gcc -O0 main.c -lm
+time ./a.out 
+
+gcc -O1 main.c -lm
+time ./a.out 
+
+gcc -O2 main.c -lm
+time ./a.out 
+
+gcc -O3 main.c -lm
+time ./a.out 
