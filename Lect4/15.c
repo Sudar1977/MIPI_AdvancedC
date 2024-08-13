@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 { 
   double startTime, endTime; 
   startTime = getCPUTime( ); 
-  for(int i=0;i<300000000;i++) 
+  for(int i=0;i<600000000;i++) 
   {} 
   endTime = getCPUTime( ); 
   printf( "CPU time used = %lf\n",  

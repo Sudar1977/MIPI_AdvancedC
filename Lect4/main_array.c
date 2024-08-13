@@ -1,4 +1,4 @@
-// main_array.c 
+// main_array.c
 #include <stdlib.h>
 
 void g(void)
@@ -12,10 +12,10 @@ void f(void)
     g();
 }
 
-int main(void){
+int main(void) {
     int i;
     int* a[10];
-        for (i = 0; i < 10; i++) {
+    for (i = 0; i < 10; i++) {
         a[i] = malloc(1000);
     }
     f();

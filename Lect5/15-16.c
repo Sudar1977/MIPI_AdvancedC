@@ -10,7 +10,7 @@ void encryptDecrypt(char inpString[], char key[]) {
 }
 int main(void) {
     char sampleString[] = "Hello world";
-    char key[] = "HASSWORD";//HASSWORD    
+    char key[] = "PASSWORD";//HASSWORD    
     printf("Encrypted String: ");
     encryptDecrypt(sampleString, key);//HASSWORD
     printf("%s\n", sampleString);

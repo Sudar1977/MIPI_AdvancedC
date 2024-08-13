@@ -35,8 +35,9 @@ void printCurrentLevel(tree* root, int level)
     else if (level > 1)
     {
         //если поменять местами то будет обход справа на лево
-        printCurrentLevel(root->left,  level - 1);
         printCurrentLevel(root->right, level - 1);
+
+        printCurrentLevel(root->left,  level - 1);
     }
 }
 //функция печати

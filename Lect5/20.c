@@ -2,6 +2,7 @@
 #include <math.h>
 
 int binpow (int n, int pow) {
+static int counter=0;
     if (pow == 0)
         return 1;
     if ( (pow % 2) == 1) // нечетная степень (pow & 1)

@@ -1,1 +1,0 @@
-objdump -D program.exe > program.asm

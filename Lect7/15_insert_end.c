@@ -32,7 +32,10 @@ void insert_end(list **head, int32_t value)
         list *p = *head;
         while(p->next != NULL)
             p = p->next; //идем в конец списка
+        //~ for(;p->next;p = p->next){} //идем в конец списка
         p->next = new;
+        
+        
     }
 }
 

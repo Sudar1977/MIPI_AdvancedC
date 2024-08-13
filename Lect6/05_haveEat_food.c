@@ -123,7 +123,7 @@ void initHead(struct snake_t *head, int x, int y)
 {
     head->x = x;
     head->y = y;
-    head->direction = RIGHT;
+    head->direction = LEFT;
 }
 
 void initSnake(snake_t *head, size_t size, int x, int y)

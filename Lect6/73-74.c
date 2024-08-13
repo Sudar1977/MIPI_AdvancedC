@@ -13,11 +13,13 @@
     printf("%llu\n",hash);
     return hash;
 }
+
 _Bool checkPass(char *p) {
     if(getHash(p) == 577739920)//secret
         return 1;
     return 0;
 }
+
 int main(void){
     char password[100];
     printf("Input your password: ");
