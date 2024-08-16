@@ -92,23 +92,20 @@ float df(float x) {
     return 32*x*x*x + 96*x*x + 80*x + 16;
 }
 
-float ddf(float x) {
-    return 96*x*x + 192*x + 80;
-}
+int main()
+{
 
 
-
-int main() {
-const float points[4][2] = {{-2, -1.5},{-1.5, -1},{-0.7, -0.5},{-0.16, -0.001}};
+float points[4][2] = {{-2, -1.5},{-1.5, -1},{-0.7, 0.5},{-0.01, 0}};
     for(int i=0;i<4;i++)
     {
         printf("------------------Root%d----------------------\n",i);
         printf("Find Line Search root  = %f\n", rootFindLineSearch(points[i][0],points[i][1],0.001,f));
         printf("Find Div Search root   = %f\n", rootFindDiv(points[i][0],points[i][1],0.001,f));    
-        printf("Find Chord Search root = %f\n", rootFindChord(points[i][0],points[i][1],0.001,f)); 
-        printf("Find Find Tangent root = %f\n", rootFindTangent(points[i][1],0.001,f,df));                 
+        printf("Find Chord Search root = %f\n", rootFindChord(points[i][0],points[i][1],0.001,f));         
+        printf("Find Find Tangent root = %f\n", rootFindTangent(points[i][0],0.001,f,df));            
     }
+    
     return 0;    
 }
-
 

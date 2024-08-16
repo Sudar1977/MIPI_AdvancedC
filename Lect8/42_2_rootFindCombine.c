@@ -96,24 +96,6 @@ float ddf(float x) {
     return 96*x*x + 192*x + 80;
 }
 
-
-float rootFindCombine(float xl, float xr, float eps, function f, function df, function ddf ) {
-   int stepcount=0;    
-   while(fabs(xl-xr) > 2*eps) {
-       if( f(xl)*ddf(xl)<0 )
-           xl = xl - (f(xl)*(xl - xr))/(f(xl) - f(xr));
-       else
-           xl = xl - f(xl)/df(xl);
-       if( f(xr)*ddf(xr)<0 )
-           xr = xr - (f(xr)*(xr - xl))/(f(xr) - f(xl));
-       else
-           xr = xr - f(xr)/df(xr);
-       stepcount++;        
-   }
-   printf("Find Tangent Search root for %d steps\n",stepcount);   
-   return (xl+xr)/2;
-}
-
 int main() {
 const float points[4][2] = {{-2, -1.5},{-1.5, -1},{-0.7, -0.5},{-0.01, 0}};
 const float eps = 0.0001;
@@ -124,7 +106,6 @@ const float eps = 0.0001;
         printf("Find Div Search root   = %f\n", rootFindDiv(points[i][0],points[i][1],eps,f));    
         printf("Find Chord Search root = %f\n", rootFindChord(points[i][0],points[i][1],eps,f));         
         printf("Find Find Tangent root = %f\n", rootFindTangent(points[i][0],eps,f,df));            
-        printf("Find Combine Search root = %f\n", rootFindCombine(points[i][0],points[i][1],eps,f,df,ddf));
     }
     return 0;    
 }

@@ -24,8 +24,8 @@ float f(float x) {
  
 int main() {
     printf("Line Search root1 = %f\n",rootFindLineSearch(-2,-1.5,0.001,f));
-    printf("Line Search root1 = %f\n",rootFindLineSearch(-1.5,-1,0.001,f));
-    printf("Line Search root1 = %f\n",rootFindLineSearch(-1,-0.5,0.001,f));
-    printf("Line Search root1 = %f\n",rootFindLineSearch(-0.5,0, 0.001,f));
+    printf("Line Search root2 = %f\n",rootFindLineSearch(-1.5,-1,0.001,f));
+    printf("Line Search root3 = %f\n",rootFindLineSearch(-1,-0.5,0.001,f));
+    printf("Line Search root4 = %f\n",rootFindLineSearch(-0.5,0, 0.001,f));
     return 0;    
 }
