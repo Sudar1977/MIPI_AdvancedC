@@ -1,0 +1,5 @@
+set xrange[-2:2]
+set yrange[-1:10]
+plot x*x+3
+plot x*x+3, 0 
+plot x**5+3, 0 
