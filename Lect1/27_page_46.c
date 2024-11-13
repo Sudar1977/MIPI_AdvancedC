@@ -16,7 +16,7 @@ int extractExp(float f) {
 
 int main(void)
 {
-    float f = 1.23;
+    float f = 1.423;
     printf("exp = %d\n",extractExp(f)-127);
     return 0;
 }    

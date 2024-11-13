@@ -9,4 +9,6 @@ int main(void)
     u >>= 1; // сдвиг вправо на 1 бит   0b1111 1010(0)
     //~ printf("u = 0x%"PRIx8 "\n", u);
     printf("u = 0x%"PRIx8 "\n", u);
+	
+	return 0;
 }
