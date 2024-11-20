@@ -3,8 +3,9 @@
 #include <inttypes.h>
 
 
-int main(void) 
+int main(void)
 {
     int32_t x = 17;
     (x & 1) ? printf("Odd") : printf("Even");
+    return 0;
 }
