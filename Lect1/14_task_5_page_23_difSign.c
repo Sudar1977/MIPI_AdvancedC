@@ -7,7 +7,7 @@ _Bool difSign(int32_t a, int32_t b) {
 
 int main(void)
 {
-    int a = -3,b=5;
+    int a = 3,b=5;
     difSign(a,b) ? printf("YES\n") : printf("NO\n");
     return 0;
 }

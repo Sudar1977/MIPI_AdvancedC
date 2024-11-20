@@ -3,15 +3,15 @@
 
 int leftRotate(uint32_t n, uint32_t rotate)
 {
-	return (n << rotate)|(n >> (32 - rotate));
+    return (n << rotate)|(n >> (32 - rotate));
 }
 int main () 
 {
-	int32_t a, rotate, res;
-	
-	scanf("%d %d",&a, &rotate);
-	res = leftRotate(a, rotate);
-	printf("%d", res);
+    int32_t a, rotate, res;
+    
+    scanf("%x %d",&a, &rotate); 
+    res = leftRotate(a, rotate);
+    printf("%x", res);
 
-	return 0;
+    return 0;
 }

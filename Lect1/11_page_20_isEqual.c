@@ -5,7 +5,7 @@ _Bool isEqual(int a, int b) {
 
 int main(void)
 {
-    int a = 3,b=3;
+    int a = 3,b=4;
     isEqual(a,b) ? printf("YES\n") : printf("NO\n");
     return 0;
 }

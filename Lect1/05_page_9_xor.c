@@ -6,7 +6,7 @@ int find_odd_element(int32_t arr[], size_t n)
 {
     int32_t res = 0;
     for (size_t i = 0; i < n; i++)
-        res ^= arr[i];//А^B^A = A
+        res ^= arr[i];//А^B^A = B
     return res;
 }
 int main(void) {

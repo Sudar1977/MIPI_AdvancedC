@@ -12,7 +12,7 @@ int main(void)
   //~ struct date dt = { 31, 12, 2021 };//{ 31, 12, 21 }
   struct date dt = { 31, 12, 127 };
   printf("Size is %llu\n",  sizeof(dt));
-  printf("Date is %u/%u/%u\n",dt.day, dt.month, dt.year);
+  printf("Date is %u/%u/%u\n",dt.day, dt.month, 2000+dt.year);
 //+2000);
   return 0;
 }

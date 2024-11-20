@@ -15,7 +15,7 @@ int main(void)
     struct s {
         int i;
         float f;
-    } st;
+    } st = {1,0};
     
     struct s  *ps;
     ps = &st; //указатель на структуру

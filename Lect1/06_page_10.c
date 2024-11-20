@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    int32_t x = 17;
+    int32_t x = 18;
     (x & 1) ? printf("Odd") : printf("Even");
     return 0;
 }
