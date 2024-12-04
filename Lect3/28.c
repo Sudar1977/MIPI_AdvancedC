@@ -1,15 +1,15 @@
-#include <stdio.h>
-#include <locale.h> //setlocale() 
+ #include <stdio.h>
+#include <locale.h> //setlocale()
 #include <inttypes.h>
-#include <wchar.h> //В«С€РёСЂРѕРєРёРµВ» СЃРёРјРІРѕР»С‹
+#include <wchar.h> //«широкие» символы
 int main(void)
 {
-    char* res = setlocale(LC_ALL,"en_US.UTF-8");
+    char* res = setlocale(LC_ALL,"");
     printf("%s\n",res);
-    wchar_t str1[] = L"РџСЂРёРІРµС‚";
+    wchar_t str1[] = L"Привет";
     printf("str1 = %S\n", str1);
     printf("sizeof str1 = %llu\n", sizeof(str1));
-    char str2[] = "РџСЂРёРІРµС‚";
+    char str2[] = "Привет";
     printf("str2 = %s\n",str2);
     printf("sizeof str2 = %llu\n", sizeof(str2));
     char str3[] = "Hello!";

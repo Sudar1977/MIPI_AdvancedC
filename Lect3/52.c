@@ -1,12 +1,11 @@
-#include <curses.h>
+#include <ncurses/ncurses.h>
 #include <unistd.h>
 
 int main() {
     initscr();
     printw("Hello World !!!");
     printw("\nPress any key to continue... ");
-    // refresh(); // по
-    пробуйте включить и выключить
+    // refresh(); // по пробуйте включить и выключить
     sleep(3);
     getch();
     endwin();

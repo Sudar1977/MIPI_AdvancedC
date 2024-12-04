@@ -1,4 +1,4 @@
-#include <curses.h>
+#include <ncurses/ncurses.h>
 #include <unistd.h>
 
 int main() {

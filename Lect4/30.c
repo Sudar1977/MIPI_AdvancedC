@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-inline int foo() {
+static inline int foo() {
     return 2;
 }
 
-int main() {  
+int main() {
     int ret;
 
     ret = foo();
-  
+
     printf("Result: %d\n", ret);
     return 0;
 }

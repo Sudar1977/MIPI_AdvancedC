@@ -1,8 +1,8 @@
-#include <curses.h>
+#include <ncurses/ncurses.h>
 
 int main()
-{   
-    int ch;  
+{
+    int ch;
     initscr();  // Начать curses mode
     raw();      // Отключаем buffering. Ctrl+C не завершит программу
     noecho(); // Отключаем echo() режим пока считываем символы getch
