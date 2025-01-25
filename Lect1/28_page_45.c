@@ -36,6 +36,8 @@ uint32_t count1 : 8; // счетчик единиц в array
 
 void array2struct(int origin[] , struct pack_array *res)
 {
+    struct pack_array init = {0,0,0};
+    *res = init;
     for (int i =0; i<32; i++)
     {
         res->count1 += origin[i];
@@ -48,7 +50,7 @@ void array2struct(int origin[] , struct pack_array *res)
 int main ()
 {
 int arr[32]={0};
-struct pack_array res;
+struct pack_array res = {0,0,0};
     for (int i=0; i<32; i++)
     {
         scanf("%d", arr+i);
