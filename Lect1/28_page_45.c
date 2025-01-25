@@ -47,7 +47,7 @@ void array2struct(int origin[] , struct pack_array *res)
 
 int main ()
 {
-int arr[32];
+int arr[32]={0};
 struct pack_array res;
     for (int i=0; i<32; i++)
     {
