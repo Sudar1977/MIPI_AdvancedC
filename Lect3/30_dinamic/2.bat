@@ -1,0 +1,1 @@
+gcc -o prog2 main.c -L ./ libmy2.so

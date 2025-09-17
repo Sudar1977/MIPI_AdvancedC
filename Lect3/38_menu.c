@@ -10,7 +10,8 @@ int main(void)
     do
     {
         printf("Enter a symbol\n");
-        scanf("%c", &c);
+        scanf(" %c", &c);
+        //~ scanf("%c", &c);
         printf("%c\n", c);
     }
     while (c != 'q');
