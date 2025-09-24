@@ -19,7 +19,7 @@ int pst=0; // заполненность  стека
 void push(datatype v) // используется для вычислений
 {
     st[pst++]=v;
-} 
+}
 datatype pop()
 {
     if(pst<=0) {
@@ -32,10 +32,10 @@ datatype pop()
     return st[--pst];
 }
 
- int isEmpty() // определяет пустой ли стек st
-{
-    return (pst<=0);
-}
+ //~ int isEmpty() // определяет пустой ли стек st
+//~ {
+    //~ return (pst<=0);
+//~ }
 
 void operate(char c) // вычисляем два верхних значения на стеке st
 {
@@ -47,19 +47,19 @@ void operate(char c) // вычисляем два верхних значени�
         break;
         case '-':
             push(arg2-arg1);
-        break;      
+        break;
         case '*':
             push(arg1*arg2);
-        break;              
+        break;
         case '/':
             push(arg2/arg1);
-        break;              
+        break;
     }
 }
 _Bool isDigit(char c) // проверяем является ли символ цифрой
 {
     return ((c>='0')&&(c<='9'));
-}   
+}
 
 _Bool isOperator(char c) {
     return c=='+' ||  c=='-' ||  c=='*' || c=='/';
@@ -74,16 +74,16 @@ int main(void)
     char c;
     printf("Input inverse string: ");
 
-    char str[1000];    
+    char str[1000];
     int len=0;// 1 2 + 4 * 3 + // 3 5 + 10 * 17 2 * -
               //answer = 15    // answer = 46
     //~ scanf("%[^\n]",str);
     //~ len=strlen(str);
     while((c=getchar())!='\n')
         str[len++]=c;
-    str[len]=0; 
+    str[len]=0;
     //~ printf("str=%slen=%d\n",str,len);
-    for(int i=0;i<len;i++)    
+    for(int i=0;i<len;i++)
     {
         if(isDigit(str[i]))
         {
@@ -92,15 +92,15 @@ int main(void)
                 number=number*10+str[i]-'0';
             //~ printf("%d \n",number);
             push(number);
-        }        
+        }
         else
         {
-            if(i>=len)            
+            if(i>=len)
                 break;
             if(isOperator(str[i]))
                  operate(str[i]);
         }
     }
-    printf("answer = %d\n",pop());    
+    printf("answer = %d\n",pop());
     return 0;
 }
