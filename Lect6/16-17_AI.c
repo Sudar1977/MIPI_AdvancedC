@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <curses.h>
+#include <ncurses/ncurses.h>
 #include <inttypes.h>
 #include <string.h>
 #include <unistd.h>
@@ -227,11 +227,36 @@ int checkDirection(snake_t* snake, int32_t key)
 
 }
 
+//======Добавление ИИ========================================================
+
+int distance(const snake_t snake, const struct food food) {   // вычисляет количество ходов до еды
+    return (abs(snake.x - food.x) + abs(snake.y - food.y));
+}
+
+//Для автоизменения направления напишем функцию
+//Она определяет ближайшую к себе еду и движется по направлению к ней
+void autoChangeDirection(snake_t *snake, struct food food[], int foodSize)
+{
+    int pointer = 0;
+    for (int i = 1; i < foodSize; i++) {   // ищем ближайшую еду
+        pointer = (distance(*snake, food[i]) < distance(*snake, food[pointer])) ? i : pointer;
+    }
+    if ((snake->direction == RIGHT || snake->direction == LEFT) &&
+        (snake->y != food[pointer].y)) {  // горизонтальное движение
+        snake->direction = (food[pointer].y > snake->y) ? DOWN : UP;
+    } else if ((snake->direction == DOWN || snake->direction == UP) &&
+               (snake->x != food[pointer].x)) {  // вертикальное движение
+        snake->direction = (food[pointer].x > snake->x) ? RIGHT : LEFT;
+    }
+}
+//========================================================================
+
+
 //Вынести тело цикла while из int main() в отдельную функцию update
 //и посмотреть, как изменится профилирование
 void update(struct snake_t *head, struct food f[], const int32_t key)
 {
-    autoChangeDirection(head,f,SEED_NUMBER);    
+    autoChangeDirection(head,f,SEED_NUMBER);
     clock_t begin = clock();
     go(head);
     goTail(head);
@@ -273,33 +298,12 @@ void repairSeed(struct food f[], size_t nfood, struct snake_t *head)
         }
 }
 
-//======Добавление ИИ========================================================   
 
-int distance(const snake_t snake, const struct food food) {   // вычисляет количество ходов до еды
-    return (abs(snake.x - food.x) + abs(snake.y - food.y));
-}
-//Для автоизменения направления напишем функцию
-//Она определяет ближайшую к себе еду и движется по направлению к ней
-void autoChangeDirection(snake_t *snake, struct food food[], int foodSize)
-{
-    int pointer = 0;
-    for (int i = 1; i < foodSize; i++) {   // ищем ближайшую еду
-        pointer = (distance(*snake, food[i]) < distance(*snake, food[pointer])) ? i : pointer;
-    }
-    if ((snake->direction == RIGHT || snake->direction == LEFT) &&
-        (snake->y != food[pointer].y)) {  // горизонтальное движение
-        snake->direction = (food[pointer].y > snake->y) ? DOWN : UP;
-    } else if ((snake->direction == DOWN || snake->direction == UP) &&
-               (snake->x != food[pointer].x)) {  // вертикальное движение
-        snake->direction = (food[pointer].x > snake->x) ? RIGHT : LEFT;
-    }
-}
-//========================================================================   
 
 
 int main()
 {
-//========================================================================   
+//========================================================================
 snake_t* snakes[PLAYERS];
     for (int i = 0; i < PLAYERS; i++)
         initSnake(snakes,START_TAIL_SIZE,10+i*10,10+i*10,i);

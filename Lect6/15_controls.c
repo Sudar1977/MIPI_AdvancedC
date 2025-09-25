@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <curses.h>
+#include <ncurses/ncurses.h>
 #include <inttypes.h>
 #include <string.h>
 #include <unistd.h>
@@ -275,7 +275,7 @@ void repairSeed(struct food f[], size_t nfood, struct snake_t *head)
 
 int main()
 {
-//========================================================================   
+//========================================================================
 snake_t* snakes[PLAYERS];
     for (int i = 0; i < PLAYERS; i++)
         initSnake(snakes,START_TAIL_SIZE,10+i*10,10+i*10,i);

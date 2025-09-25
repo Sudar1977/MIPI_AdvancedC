@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <curses.h>
+#include <ncurses/ncurses.h>
 #include <inttypes.h>
 #include <string.h>
 #include <unistd.h>
@@ -198,7 +198,7 @@ void goTail(struct snake_t *head)
     head->tail[0].y = head->y;
 }
 
-//========================================================================        
+//========================================================================
 //Проверка того, является ли какое-то из зерен съеденным,
 _Bool haveEat(struct snake_t *head, struct food f[])
 {
@@ -214,7 +214,7 @@ void addTail(struct snake_t *head)
 {
 //...нужно написать код...//
 }
-//========================================================================  
+//========================================================================
 int checkDirection(snake_t* snake, int32_t key)
 {
 //...нужно написать код...//
@@ -249,7 +249,7 @@ int main()
 snake_t* snake = (snake_t*)malloc(sizeof(snake_t));
 
     initSnake(snake,START_TAIL_SIZE,10,10);
-       
+
     initscr();
     keypad(stdscr, TRUE); // Включаем F1, F2, стрелки и т.д.
     raw();                // Откдючаем line buffering
@@ -258,7 +258,7 @@ snake_t* snake = (snake_t*)malloc(sizeof(snake_t));
     mvprintw(0, 0,"Use arrows for control. Press 'F10' for EXIT");
     timeout(0);    //Отключаем таймаут после нажатия клавиши в цикле
     initFood(food, MAX_FOOD_SIZE);
-    putFood(food, SEED_NUMBER);// Кладем зерна    
+    putFood(food, SEED_NUMBER);// Кладем зерна
     int key_pressed=0;
     while( key_pressed != STOP_GAME )
     {
