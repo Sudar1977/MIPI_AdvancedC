@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 typedef struct tree {
-    int key;//datatype 
+    int key;//datatype
     struct tree *left, *right;
     struct tree *parent; // необязательное поле
 } tree;
@@ -18,7 +18,7 @@ int heightTree(tree* p)
         /* вычисляем высоту каждого поддерева */
         int lheight = heightTree(p->left);
         int rheight = heightTree(p->right);
- 
+
         if (lheight > rheight)
             return (lheight + 1);
         else
@@ -30,13 +30,12 @@ void printCurrentLevel(tree* root, int level)
 {
     if (root == NULL)
         return;
-    if (level == 1)
+    else if (level == 1)
         printf("%d ", root->key);
     else if (level > 1)
     {
         //если поменять местами то будет обход справа на лево
         printCurrentLevel(root->right, level - 1);
-
         printCurrentLevel(root->left,  level - 1);
     }
 }
@@ -51,10 +50,10 @@ void printBFS(tree* root)
 int main(void)
 {
     tree *tr = NULL;
-    
+
     tr = calloc(1,sizeof(tree));
     tr->key = 1;
-    
+
     tr->right = calloc(1,sizeof(tree));
     tr->right->key = 5;
 
@@ -69,6 +68,6 @@ int main(void)
 
     printf("BFS (Breadth First Traversal)\n");
     printBFS(tr);
-  
+
     return 0;
 }

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 typedef struct tree {
-    int key;//datatype 
+    int key;//datatype
     struct tree *left, *right;
     struct tree *parent; // необязательное поле
 } tree;
@@ -23,7 +23,7 @@ void preorder(tree *root)
 void inorder(tree *root) {
     if(root == NULL)
         return;
-    if(root->left)    
+    if(root->left)
         inorder(root->left);
     printf("%d ",root->key);
     if(root->right)
@@ -52,7 +52,7 @@ int heightTree(tree* p)
         /* вычисляем высоту каждого поддерева */
         int lheight = heightTree(p->left);
         int rheight = heightTree(p->right);
- 
+
         if (lheight > rheight)
             return (lheight + 1);
         else
@@ -83,7 +83,7 @@ void printBFS(tree* root)
 
 void insert(tree **root,int key, tree *pt) {
     if(!(*root))
-    { 
+    {
 // дерево пустое или дошли до нужного места
         *root=(tree *)calloc(1,sizeof(tree));
         (*root)->key=key;
@@ -127,32 +127,32 @@ int main(void)
     insert(&tr,5, NULL);
     insert(&tr,15,NULL);
     insert(&tr,3, NULL);
-    insert(&tr,7 ,NULL);  
-    insert(&tr,18,NULL);  
-    insert(&tr,1, NULL);    
+    insert(&tr,7 ,NULL);
+    insert(&tr,18,NULL);
+    insert(&tr,1, NULL);
     insert(&tr,6 ,NULL);
-    printf("BFS (Breadth First Traversal)\n");    
+    printf("BFS (Breadth First Traversal)\n");
     printBFS(tr);
-    printf("\nInorder\n");    
+    printf("\nInorder\n");
     inorder(tr);
-    insert(&tr,8, NULL);     
+    insert(&tr,8, NULL);
     printf("\n");
-    printf("BFS (Breadth First Traversal)\n");    
+    printf("BFS (Breadth First Traversal)\n");
     printBFS(tr);
-    printf("\nInorder\n");    
+    printf("\nInorder\n");
     inorder(tr);
 tree *node;
-    node = search_tree(tr,20);
+    node = search_tree(tr,18);
     if(node)
         printf("\nsearch_tree = %d\n",node->key);
     else
         printf("\nNO\n");
-    node = search_tree_i(tr,20);    
+    node = search_tree_i(tr,18);
     if(node)
         printf("search_tree_i = %d\n",node->key);
     else
         printf("\nNO\n");
 
-    
+
     return 0;
 }

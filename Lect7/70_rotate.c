@@ -22,7 +22,8 @@ struct node* insert(struct node *p, int k)
         p->left = insert( p->left,k);
     else
         p->right = insert( p->right,k);
-    return balance(p);
+    //~ return balance(p);
+    return p;//без балансировки обычное дерево поиска
 }
 
 /* Высота поддерева */
